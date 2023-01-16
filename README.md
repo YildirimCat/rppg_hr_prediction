@@ -14,3 +14,6 @@ pip install -r /path/requirements.txt
 + dlib 19.24.0
 + opencv-python 4.5.5.62
 + scikit-learn 0.23.2
+
+### Uygulamanın Çalıştırılması
+Gerekli kütüphanelerin ve paketlerin kurulmasından sonra **pos_face_seg.py** dosyasını çalıştırarak uygulamayı kullanabilirsiniz. 
