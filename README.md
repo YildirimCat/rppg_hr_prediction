@@ -22,10 +22,10 @@ Gerekli kütüphanelerin ve paketlerin kurulmasından sonra **pos_face_seg.py** 
 - [ ] Literatürdeki kamera ve görüntü işleme algoritmalarını kullanarak gerçek zamanlı temassız nabız ölçümü yapan algoritmaların analiz edilmesi.
 - [ ] En iyi sonuç veren görüntü işleme algoritmasının tespit edilmesi.
 - [ ] Yüz tanıma yazılımın geliştirilmesi.
+- [ ] Ara raporun teslim edilmesi.
 - [ ] Farklı kişilerden farklı koşullar altında yüz görüntülerinin alınması.
 - [ ] Alınan yüz görüntülerinden nabız hesaplamalarının yapılması.
 - [ ] Yüz görüntüleri kullanılarak yapılan nabız hesaplamalarının farklı nabız ölçme teknikleriyle elde edilen verilerle mukayese edilmesi.
-- [ ] Ara raporun teslim edilmesi.
 - [ ] Final raporunun teslim edilmesi ve sunum yapılması.
 
 
