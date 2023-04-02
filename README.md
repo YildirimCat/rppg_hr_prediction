@@ -18,6 +18,13 @@ pip install -r /path/requirements.txt
 ### Uygulamanın Çalıştırılması
 Gerekli kütüphanelerin ve paketlerin kurulmasından sonra **pos_face_seg.py** dosyasını çalıştırarak uygulamayı kullanabilirsiniz. 
 
+### To-Dos
+- [x] Karar matrisinin geliştirilmesi.
+- [ ] Blok diyagramın tasarlanması.
+- [ ] Akış diyagramının oluşturulması.
+- [ ] Aktivite diyagramının oluşturulması.
+- [ ] Metinsel analizin yazılması.
+
 ### Projenin Gelişim Planı
 - [x] Literatürdeki kamera ve görüntü işleme algoritmalarını kullanarak gerçek zamanlı temassız nabız ölçümü yapan algoritmaların analiz edilmesi.
 - [x] En iyi sonuç veren görüntü işleme algoritmasının tespit edilmesi.
