@@ -35,14 +35,12 @@ def main(user_input=None):
     # FREQUENCY ANALYSIS
     nsegments = 12
 
-    #TODO: İlk değeri False'du
+
     plot = False
     image_show = True
 
     left_increase_ratio = 0.05 #5%
     top_increase_ratio = 0.25 #5%
-
-
 
     ap = argparse.ArgumentParser()
     # default="C:\\Users\Yldrm\OneDrive\Masaüstü\HR_Monitoring\rppg_test\rppg-pos\SkinDetector\tests\captures\capture_sample.mp4"
@@ -288,13 +286,15 @@ def main(user_input=None):
     from matplotlib import pyplot
     pyplot.plot(range(signal.shape[0]), signal, 'g')
     pyplot.title('Filtered green signal')
+    pyplot.xlabel('Frames')
+    pyplot.ylabel('Amplitude')
     pyplot.show()
 
 
     from scipy.signal import welch
     signal = signal.flatten()
-    green_f, green_psd = welch(signal, framerate, 'flattop', nperseg=segment_length, scaling='spectrum', nfft=2048) #, scaling='spectrum',nfft=2048)
-    print('Signal: ', signal) # Signal eşsiz sonuç döndürüyor...
+    green_f, green_psd = welch(signal, framerate, 'flattop', nperseg=segment_length, scaling='spectrum', nfft=2048)
+    print('Signal: ', signal)
     print("Green F, Shape",green_f,green_f.shape)
     print("Green PSD, Shape",green_psd,green_psd.shape)
 
@@ -311,7 +311,7 @@ def main(user_input=None):
     f_max = green_f[range_of_interest[max_idx]]
 
     hr = f_max * 60.0
-    print("Heart rate = {0}".format(hr))
+    print("Heart rate = {0:.2f}".format(hr))
 
 
 
@@ -327,11 +327,12 @@ def main(user_input=None):
     pyplot.semilogy(green_f, green_psd, 'g')
     xmax, xmin, ymax, ymin = pyplot.axis()
     pyplot.vlines(green_f[range_of_interest[max_idx]], ymin, ymax, color='red')
-    pyplot.title('Power spectrum of the green signal (HR = {0:.1f})'.format(hr))
+    pyplot.title('Power spectrum of the green signal (HR = {0:.2f})'.format(hr))
+    pyplot.xlabel("Frequency")
+    pyplot.ylabel("Amplitude")
     pyplot.show()
-
-    
 
 if __name__ == "__main__":
 	main()
+
     
