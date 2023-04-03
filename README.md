@@ -22,7 +22,7 @@ Gerekli kütüphanelerin ve paketlerin kurulmasından sonra **pos_face_seg.py** 
 - [x] Karar matrisinin geliştirilmesi.
 - [ ] Blok diyagramın tasarlanması.
 - [ ] Akış diyagramının oluşturulması.
-- [ ] Aktivite diyagramının oluşturulması.
+- [x] Aktivite diyagramının oluşturulması.
 - [ ] Metinsel analizin yazılması.
 
 ### Projenin Gelişim Planı
