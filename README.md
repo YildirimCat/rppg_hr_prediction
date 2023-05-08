@@ -21,15 +21,15 @@ Gerekli kütüphanelerin ve paketlerin kurulmasından sonra **pos_face_seg.py** 
 ### To-Dos
 - [x] Karar matrisinin geliştirilmesi.
 - [x] Blok diyagramın tasarlanması.
-- [+] Akış diyagramının oluşturulması.
+- [x] Akış diyagramının oluşturulması.
 - [x] Aktivite diyagramının oluşturulması.
 - [ ] Metinsel analizin yazılması.
 
 ### Projenin Gelişim Planı
 - [x] Literatürdeki kamera ve görüntü işleme algoritmalarını kullanarak gerçek zamanlı temassız nabız ölçümü yapan algoritmaların analiz edilmesi.
 - [x] En iyi sonuç veren görüntü işleme algoritmasının tespit edilmesi.
-- [+] Yüz tanıma yazılımın geliştirilmesi.
-- [+] Ara raporun teslim edilmesi.
+- [x] Yüz tanıma yazılımın geliştirilmesi.
+- [x] Ara raporun teslim edilmesi.
 - [ ] Farklı kişilerden farklı koşullar altında yüz görüntülerinin alınması.
 - [ ] Alınan yüz görüntülerinden nabız hesaplamalarının yapılması.
 - [ ] Yüz görüntüleri kullanılarak yapılan nabız hesaplamalarının farklı nabız ölçme teknikleriyle elde edilen verilerle mukayese edilmesi.
