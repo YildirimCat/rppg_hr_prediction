@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>heartbeat-pulse-wallpaper-preview.jpg</file>
+  </qresource>
+</RCC>
