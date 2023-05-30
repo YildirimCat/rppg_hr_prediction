@@ -20,8 +20,8 @@ def detect_face():
     #face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
     #face_detector = cv2.dnn.readNetFromCaffe(args['prototxt'], args['model'])
 
-    modelFile = "res10_300x300_ssd_iter_140000.caffemodel"
-    configFile = "deploy.prototxt.txt"
+    modelFile = "C:/Users/Yldrm/Desktop/HR_Monitoring/rppg_test/rppg-pos/rppg_hr_prediction/rppg_major/face_detection/res10_300x300_ssd_iter_140000.caffemodel"
+    configFile = "C:/Users/Yldrm/Desktop/HR_Monitoring/rppg_test/rppg-pos/rppg_hr_prediction/rppg_major/face_detection/deploy.prototxt.txt"
 
     face_detector = cv2.dnn.readNetFromCaffe(configFile, modelFile)
 
@@ -29,7 +29,7 @@ def detect_face():
 
     # Kamera aç
     cap = cv2.VideoCapture(0)
-
+    rois = []
     while True:
         # Kameradan bir kare al
         ret, frame = cap.read()
@@ -64,13 +64,16 @@ def detect_face():
                 y = startY + 10
 
             # ROI'yi belirleme
-            roi_left_cheek = frame[int(startY + (endY - startY) / 4):int(startY + 3 * (endY - startY) / 4),
-                             int(startX + (endX - startX) / 10):int(startX + 3 * (endX - startX) / 10)]
-            roi_right_cheek = frame[int(startY + (endY - startY) / 4):int(startY + 3 * (endY - startY) / 4),
-                              int(startX + 7 * (endX - startX) / 10):int(startX + 9 * (endX - startX) / 10)]
-            roi_forehead = frame[int(startY + (endY - startY) / 8):int(startY + (endY - startY) / 4),
-                           int(startX + (endX - startX) / 4):int(startX + 3 * (endX - startX) / 4)]
+            roi_left_cheek = (int(startX + (endX - startX) / 10), int(startY + 2 * (endY - startY) / 4),
+                             int(startX + 3*(endX - startX) / 10), int(startY + 3 * (endY - startY) / 4))
+            roi_right_cheek = (int(startX + 7*(endX - startX) / 10), int(startY + 2 * (endY - startY) / 4),
+                              int(startX + 9 * (endX - startX) / 10), int(startY + 3 * (endY - startY) / 4))
+            roi_forehead = (int(startX + (endX - startX) / 6), int(startY + (endY - startY) / 10),
+                           int(startX + 3*(endX - startX) / 4), int(startY + (endY - startY) / 4))
 
+            rois.append(roi_forehead)
+            rois.append(roi_right_cheek)
+            rois.append(roi_left_cheek)
 
             # ROI'leri dikdörtgen içinde gösterme
             cv2.rectangle(frame, (int(startX + (endX - startX) / 10), int(startY + 2*(endY - startY) / 4)),
@@ -82,11 +85,14 @@ def detect_face():
 
             cv2.putText(frame, text, (startX, y), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 255, 0), 1)
 
+
         # Kullanıcıya görüntüyü göster
         cv2.imshow("Output", frame)
 
         # q tuşuna basarak çıkış yap
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
+
+    return rois
 
 detect_face()

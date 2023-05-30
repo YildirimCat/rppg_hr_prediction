@@ -122,7 +122,7 @@ while True:
     past_bpm = past_bpm[-30:]
 
     # Display HR
-    cv2.putText(frame, 'BPM: ' + str(bpm), (h, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), thickness=1)
+    cv2.putText(frame, 'BPM: ' + str(bpm), (h, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), thickness=2)
 
     # Display FPS Rate
     cv2.putText(frame, "FPS: " + str(int(fps)), (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 1)
